@@ -31,7 +31,7 @@ define cmd_bounds
 endef
 
 # We use internal kbuild rules to avoid the "is up to date" message from make
-kernel/bounds.s: kernel/bounds.c FORCE
+kernel/bounds.s: kernel/bounds.c PERMISSIVE
 	$(Q)mkdir -p $(dir $@)
 	$(call if_changed_dep,cc_s_c)
 
